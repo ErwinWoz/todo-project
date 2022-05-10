@@ -1,0 +1,12 @@
+Pages:
+    Homepage
+        - create item form
+        - read+render the current list items
+        - delete button on each item
+        - edit button on each item
+            - change to "edit" mode on click
+                - enable inputs and show "save" button
+
+1. Create a list item "context"
+2. Create the list item form component
+3. Render a list item form in "create" mode in the app

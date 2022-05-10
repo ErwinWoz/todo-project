@@ -1,0 +1,29 @@
+$base-color: yellow;
+
+.form {
+    display: flex;
+    margin: 2rem auto;
+    height: 6rem;
+    justify-content: center;
+    fieldset {
+        display: flex;
+        justify-content: center;
+        width: 500px;
+        background: $base-color;
+        border-radius: 5px;
+        button {
+            margin: 1rem;
+            height: 30px;
+            width: 150px;
+        }
+        label {
+            margin: 1rem;
+            input {
+                width: 250px;
+                height: 24px;
+            }
+        }
+    }
+}
+
+
