@@ -8,19 +8,23 @@ $padding: 1rem auto;
     padding: $padding;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     h2 {
-        color: white
+        margin-left: 1rem;
+        color: #eee
     }
-    .item {
-        font-size: 2rem;
-        color: white;
+    hr {
+        color: green;
     }
-    ul {
-        margin: 2px auto;
+
+    // .completedTasks {
+    //     display: none;
+    // }
+
+    /* NOTE: & is an alias for .todolist because we're nested in .todolist */
+    // &.isShowingCompleted {
+    .completedTasks {
+        display: flex;
+        flex-direction: column;
     }
-    button {
-        height: 30px;
-        width: 60px;
-        margin: 1rem;
-    }
+    // }
 }
 

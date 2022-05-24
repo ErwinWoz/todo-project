@@ -1,0 +1,15 @@
+$background-color: #7b38d8;
+
+.button {
+    background-color: $background-color;
+    color: #eee;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+    align-self: center;
+}

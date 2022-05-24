@@ -1,59 +1,57 @@
-import { useListItemContext } from "../../contexts/list-item-context";
+import { useState } from "react";
 import style from "./todolist.module.scss";
+import { ListItemForm } from "../listItemForm";
 
-export function ToDoList() {
-  const {
-    listItems,
-    deleteItem,
-    editItem,
-    listEditing,
-    setListEditing,
-    setEditingText,
-  } = useListItemContext();
+export function ToDoList({ useListItemContext }) {
+  const { listItems, deleteItem, editItem } = useListItemContext();
 
-  const handleRemove = (id) => {
-    deleteItem(id);
-  };
-
-  const handleEdit = (id) => {
-    editItem(id);
-  };
+  // useState returns an array containing...
+  // - the state variable
+  // - the setter function
+  const [isShowingCompleted, setIsShowingCompleted] = useState(false);
 
   return (
-    <div className={style.todolist}>
+    <div
+      className={
+        style.todolist +
+        " " +
+        (isShowingCompleted ? style.isShowingCompleted : "")
+      }
+    >
       <h2>Items:</h2>
-      <hr></hr>
-
-      {listItems.map((item, id) => {
-        return (
-          <div key={item.id}>
-            <div className={style.item}>
-              <ul>
-                <li>{item.text}</li>
-              </ul>
-            </div>
-            {item.id === listEditing ? (
-              <input
-                type="text"
-                onChange={(e) => setEditingText(e.target.value)}
+      <section>
+        {listItems.map(
+          (item) =>
+            !item.completed && (
+              <ListItemForm
+                key={item.id}
+                item={item}
+                useListItemContext={useListItemContext}
               />
-            ) : (
-              <div>{null}</div>
-            )}
-            {item.text !== "" ? (
-              <div>
-                {item.id === listEditing ? (
-                  <button onClick={() => handleEdit(item.id)}>Update</button>
-                ) : (
-                  <button onClick={() => setListEditing(item.id)}>Edit</button>
-                )}
-                <button onClick={() => handleRemove(item.id)}>Delete</button>
-              </div>
-            ) : null}
-            <hr></hr>
-          </div>
-        );
-      })}
+            )
+        )}
+      </section>
+      <button
+        onClick={() => {
+          setIsShowingCompleted(!isShowingCompleted);
+        }}
+      >
+        Show/Hide Completed
+      </button>
+      {isShowingCompleted && (
+        <section className={style.completedTasks}>
+          {listItems.map(
+            (item) =>
+              item.completed && (
+                <ListItemForm
+                  key={item.id}
+                  item={item}
+                  useListItemContext={useListItemContext}
+                />
+              )
+          )}
+        </section>
+      )}
     </div>
   );
 }

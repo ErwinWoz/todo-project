@@ -1,4 +1,6 @@
-$base-color: yellow;
+$base-color: #cccccc;
+$background-color: #7b38d8;
+$button-one-width: 300px;
 
 .form {
     display: flex;
@@ -12,15 +14,25 @@ $base-color: yellow;
         background: $base-color;
         border-radius: 5px;
         button {
-            margin: 1rem;
-            height: 30px;
-            width: 150px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            background-color: $background-color;
+            border-radius: 10px;
+            border: 4px double #cccccc;
+            color: #eeeeee;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: $button-one-width;
+            transition: all 0.5s;
+    cursor: pointer;
         }
         label {
             margin: 1rem;
             input {
                 width: 250px;
-                height: 24px;
+                height: 30px;
             }
         }
     }

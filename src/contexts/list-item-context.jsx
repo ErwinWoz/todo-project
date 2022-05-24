@@ -30,7 +30,7 @@ export const ListItemProvider = ({ children }) => {
   useEffect(() => {
     // save list items in local storage
     localStorage.setItem("listItems", JSON.stringify(listItems));
-  }, [listItems]);
+  }, [listItems]);              
 
   const addItem = (item) => {
     // NOTE: Setting states is asynchronous. This means the value of listItems could
