@@ -10,6 +10,9 @@ export function ToDoList({ useListItemContext }) {
   // - the setter function
   const [isShowingCompleted, setIsShowingCompleted] = useState(false);
 
+  const itemsPerPage = 5;
+  const [pageCount, setPageCount] = useState(1);
+
   return (
     <div
       className={
@@ -20,7 +23,7 @@ export function ToDoList({ useListItemContext }) {
     >
       <h2>Items:</h2>
       <section>
-        {listItems.map(
+        {listItems.slice(0).reverse().map( //reverse list order using slice() and reverse()
           (item) =>
             !item.completed && (
               <ListItemForm
@@ -39,18 +42,33 @@ export function ToDoList({ useListItemContext }) {
         Show/Hide Completed
       </button>
       {isShowingCompleted && (
-        <section className={style.completedTasks}>
-          {listItems.map(
-            (item) =>
-              item.completed && (
+        <>
+          <section className={style.completedTasks}>
+            {listItems
+              // NOTE: YOU return false to exclude an item from the new array
+              // Filter out the incomplete items...
+              .filter((item) => item.completed)
+              // Slice off the ones after this page...
+              .slice(0, itemsPerPage * pageCount)
+              // Replace the items with form components...
+              .map((item) => (
                 <ListItemForm
                   key={item.id}
                   item={item}
                   useListItemContext={useListItemContext}
                 />
-              )
+              ))}
+          </section>
+          {listItems.filter((item) => item.completed).length > itemsPerPage && (
+            <button
+              onClick={() => {
+                setPageCount(pageCount + 1);
+              }}
+            >
+              Show More
+            </button>
           )}
-        </section>
+        </>
       )}
     </div>
   );

@@ -1,12 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
 import { App } from "./components/app";
+import theme from "./themes/theme.module.scss";
 // import style from './index.module.scss';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-);
+root.render(<App theme={theme} />);

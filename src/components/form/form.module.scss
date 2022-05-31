@@ -3,39 +3,36 @@ $background-color: #7b38d8;
 $button-one-width: 300px;
 
 .form {
+  display: flex;
+  margin: 2rem auto;
+  justify-content: center;
+  fieldset {
     display: flex;
-    margin: 2rem auto;
-    height: 6rem;
+    flex-wrap: wrap;
     justify-content: center;
-    fieldset {
-        display: flex;
-        justify-content: center;
-        width: 500px;
-        background: $base-color;
-        border-radius: 5px;
-        button {
-            margin: auto;
-            display: flex;
-            justify-content: center;
-            background-color: $background-color;
-            border-radius: 10px;
-            border: 4px double #cccccc;
-            color: #eeeeee;
-            text-align: center;
-            font-size: 28px;
-            padding: 20px;
-            width: $button-one-width;
-            transition: all 0.5s;
-    cursor: pointer;
-        }
-        label {
-            margin: 1rem;
-            input {
-                width: 250px;
-                height: 30px;
-            }
-        }
+    background: $base-color;
+    border-radius: 5px;
+    button {
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      background-color: $background-color;
+      border-radius: 10px;
+      border: 4px double #cccccc;
+      color: #eeeeee;
+      text-align: center;
+      font-size: 28px;
+      padding: 20px;
+      width: $button-one-width;
+      transition: all 0.5s;
+      cursor: pointer;
     }
+    label {
+      margin: 1rem;
+      input {
+        width: 250px;
+        height: 30px;
+      }
+    }
+  }
 }
-
-

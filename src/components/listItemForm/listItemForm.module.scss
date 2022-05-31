@@ -1,14 +1,13 @@
 $todolist-border: 3px solid grey;
-$margin: 2rem auto;
-$padding: 1rem auto;
+$margin: 2em auto;
+$padding: 1em auto;
 $background-color: #7b38d8;
 $hover-color: #f7c2f9;
 
 .listItem {
-    border: $todolist-border;
+    border-bottom: $todolist-border;
     margin: $margin;
     padding: $padding;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     width: 100%;
     h2 {
         color: white
@@ -24,20 +23,20 @@ $hover-color: #f7c2f9;
         color: #eee;
         font-size: 30px;
     }
-    button {
-        height: 40px;
-        // width: 80px;
-        margin: 1rem;
-        background-color: $background-color;
-        color: #eeeeee;
-        font-size: 18px;
-        border-radius: 10px;
-        cursor: pointer;
-    }
-    button:hover {
-        background-color: $hover-color;
-        color: #000;
-      }
+    // button {
+    //     height: 40px;
+    //     // width: 80px;
+    //     margin: 1rem;
+    //     background-color: $background-color;
+    //     color: #eeeeee;
+    //     font-size: 18px;
+    //     border-radius: 10px;
+    //     cursor: pointer;
+    // }
+    // button:hover {
+    //     background-color: $hover-color;
+    //     color: #000;
+    //   }
 }
 
 .completed {

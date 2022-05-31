@@ -1,23 +1,18 @@
+$todolist-display:  flex;
 $todolist-border: 3px solid grey;
-$margin: 2rem auto;
-$padding: 1rem auto;
+$margin: 2em auto;
+$padding: 1em auto;
 
 .todolist {
+    display: $todolist-display;
+    flex-direction: column;
     border: $todolist-border;
     margin: $margin;
     padding: $padding;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     h2 {
-        margin-left: 1rem;
+        margin-left: 1em;
         color: #eee
     }
-    hr {
-        color: green;
-    }
-
-    // .completedTasks {
-    //     display: none;
-    // }
 
     /* NOTE: & is an alias for .todolist because we're nested in .todolist */
     // &.isShowingCompleted {

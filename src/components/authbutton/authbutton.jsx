@@ -20,7 +20,6 @@ export const Authbutton = () => {
   const redirectUrl = () => {
     window.location.href = baseUrl;
     console.log(baseUrl.href);
-    alert('Click "Access todolist" after page reload');
   };
 
   useEffect(() => {
@@ -48,7 +47,7 @@ export const Authbutton = () => {
         body: JSON.stringify(postParams),
       });
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
 
       localStorage.setItem("accessToken", data.access_token);
       localStorage.setItem("tokenType", data.token_type);
